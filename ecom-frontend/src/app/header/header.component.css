@@ -1,0 +1,21 @@
+  mat-toolbar {
+    display: flex;
+    padding: 20px;
+    background-color: #4992db;
+    color: #1d78d3;
+  }
+  
+  .space-buttons {
+    flex-grow: 1;
+  }
+  
+  button {
+    margin: 0 15px;
+    background-color: #a951d2;
+    color: #779d31;
+  }
+  
+  button:hover {
+    background-color: #276fb7;
+  } 
+   

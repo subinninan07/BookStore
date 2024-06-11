@@ -1,0 +1,78 @@
+<!-- <div class="container mt-5">
+    <div class="card" style="padding: 20px;">
+        <form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Username</mat-label>
+                <input matInput ngModel name="userName" id="userName" placeholder="Username">
+                
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>First Name</mat-label>
+                <input matInput ngModel name="userFirstName" id="userFirstName" placeholder="First Name">
+                
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Last Name</mat-label>
+                <input matInput ngModel name="userLastName" id="userLastName" placeholder="Last Name">
+               
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Password</mat-label>
+                <input matInput ngModel name="userPassword" id="userPassword" placeholder="Password">
+                
+            </mat-form-field>
+
+            <div class="text-center">
+                <button type="submit" mat-raised-button color="primary">Register</button>
+            </div>
+        </form>
+    </div>
+</div> -->
+
+
+
+<div class="container mt-5">
+    <div class="card" style="padding: 20px;">
+        <form #registerForm="ngForm" (ngSubmit)="register(registerForm)" novalidate>
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Username </mat-label>
+                <input matInput ngModel name="userName" id="userName" placeholder="Username" required>
+                <mat-error *ngIf="registerForm.controls.userName?.invalid && (registerForm.controls.userName?.dirty || registerForm.controls.userName?.touched)">
+                    Please enter a username.
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>First Name </mat-label>
+                <input matInput ngModel name="userFirstName" id="userFirstName" placeholder="First Name" required>
+                <mat-error *ngIf="registerForm.controls.userFirstName?.invalid && (registerForm.controls.userFirstName?.dirty || registerForm.controls.userFirstName?.touched)">
+                    Please enter your first name.
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Last Name </mat-label>
+                <input matInput ngModel name="userLastName" id="userLastName" placeholder="Last Name" required>
+                <mat-error *ngIf="registerForm.controls.userLastName?.invalid && (registerForm.controls.userLastName?.dirty || registerForm.controls.userLastName?.touched)">
+                    Please enter your last name.
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Password </mat-label>
+                <input matInput ngModel name="userPassword" id="userPassword" placeholder="Password" required>
+                <mat-error *ngIf="registerForm.controls.userPassword?.invalid && (registerForm.controls.userPassword?.dirty || registerForm.controls.userPassword?.touched)">
+                    Please enter a password.
+                </mat-error>
+            </mat-form-field>
+
+            <div class="text-center">
+                <button type="submit" mat-raised-button color="primary" [disabled]="registerForm.invalid">Register</button>
+            </div>
+        </form>
+    </div>
+</div>
+

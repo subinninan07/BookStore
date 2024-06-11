@@ -1,0 +1,16 @@
+<mat-toolbar color="accent">
+  <span>Bookstore Application</span>
+  <span class="space-buttons"></span>
+  <button *ngIf="! isLoggedIn()" routerLink="/login" mat-raised-button color="accent">Login</button>
+  <button *ngIf="isLoggedIn()" (click)="logout()" mat-raised-button color="accent">Logout</button>
+</mat-toolbar>
+
+<mat-toolbar color="accent" *ngIf="isLoggedIn()">
+  <button mat-raised-button color="accent" routerLink="/">Home</button>
+  <button *ngIf="!isAdmin()" mat-raised-button color="accent" routerLink="/cart">Cart</button>
+  <button *ngIf="!isAdmin()" mat-raised-button color="accent" routerLink="/myOrders">Orders</button>
+  <button *ngIf="isAdmin()" mat-raised-button color="accent" routerLink="/addNewProduct">Add New Product</button>
+  <button *ngIf="isAdmin()" mat-raised-button color="accent" routerLink="/showProductDetailes">Show All Products</button>
+
+  <button *ngIf="isAdmin()" mat-raised-button color="accent" routerLink="/orderInformation">Orders</button>
+</mat-toolbar>
